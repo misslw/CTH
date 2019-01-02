@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.driver.mapper.DriverMapper">
+
+    <resultMap id="BaseResultMap" type="com.driver.entity.Driver">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="carNumber" jdbcType="VARCHAR" property="carNumber" />
+        <result column="phoneNumber" jdbcType="VARCHAR" property="phoneNumber" />
+        <result column="tripPlatform" jdbcType="VARCHAR" property="tripPlatform" />
+        <result column="driverLicense" jdbcType="VARCHAR" property="driverLicense" />
+        <result column="carPhoto" jdbcType="VARCHAR" property="carPhoto" />
+        <result column="transportCertificate" jdbcType="VARCHAR" property="transportCertificate" />
+        <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+        <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+        <result column="temperature" jdbcType="VARCHAR" property="temperature" />
+        <result column="humidity" jdbcType="VARCHAR" property="humidity" />
+
+    </resultMap>
+    <select id="getDriverList" resultMap="BaseResultMap">
+    select *from driver where  id=#{id}
+ </select>
+
+</mapper>

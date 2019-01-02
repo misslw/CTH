@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.driver.mapper.ShopMapper">
+
+    <resultMap id="BaseResultMap" type="com.driver.entity.Shop">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="shop_name" jdbcType="VARCHAR" property="shop_name" />
+        <result column="province" jdbcType="VARCHAR" property="province" />
+        <result column="city" jdbcType="VARCHAR" property="city" />
+        <result column="adrress" jdbcType="VARCHAR" property="adrress" />
+        <result column="longitude" jdbcType="VARCHAR" property="longitude" />
+        <result column="latitude" jdbcType="VARCHAR" property="latitude" />
+        <result column="businessHour" jdbcType="VARCHAR" property="businessHour" />
+        <result column="type" jdbcType="VARCHAR" property="type" />
+    </resultMap>
+   <insert id="addShop" >
+        insert into shop(shop_name,province,city,adrress,longitude,latitude,businessHour,type)
+		values(#{shop_name},#{province},#{city},#{adrress},#{longitude},#{latitude},#{businessHour},#{type})
+   </insert>
+    <select id="getShopList" resultMap="BaseResultMap">
+        select *from shop
+    </select>
+
+</mapper>

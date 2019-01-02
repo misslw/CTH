@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.driver.mapper.CouponMapper">
+
+    <resultMap id="BaseResultMap" type="com.driver.entity.Coupon">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="price" jdbcType="VARCHAR" property="price" />
+        <result column="details" jdbcType="VARCHAR" property="details" />
+        <result column="tips" jdbcType="VARCHAR" property="tips" />
+    </resultMap>
+ <select id="getCouponList" resultMap="BaseResultMap">
+    select *from coupon
+ </select>
+
+</mapper>
